@@ -26,6 +26,7 @@ int main()
 
     int *arr = createArr(size);
 
+    // Populate array with squares of each number
     for(int i = 0; i < size; i++)
         arr[i] = i * i;
     
@@ -36,7 +37,8 @@ int main()
 
     arr = expandArr(arr, size, expand);
 
-    for(int i = 0; i < size + expand; i++)
+    // Only fill in the newly created locations in the array
+    for(int i = size; i < size + expand; i++)
         arr[i] = i * i;
 
     for(int i = 0; i < size + expand; i++)
