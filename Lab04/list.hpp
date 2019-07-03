@@ -9,10 +9,16 @@
 // Implement pop back and pop front which will we based on same logic as push method, but instead of adding elements, they will delete values
 // implement print method logic which will use instance of list object to print stored values
 // Protect every method logic from empty lists
+#ifndef LIST_HPP
+#define LIST_HPP
+
+#include <iostream>
+
+using std::ostream;
 
 namespace custom
 {
-    template <class T>
+    template <typename T>
     class List
     {
         private:
@@ -21,6 +27,7 @@ namespace custom
                 T data;
                 Node *next;
                 Node *prev;
+
                 Node(T value, Node *_next, Node *_prev) : data(value), next(_next), prev(_prev) { }
             };
 
@@ -31,11 +38,79 @@ namespace custom
         public:
             List();
             ~List();
-            bool isEmpty();
-            T PopBack();
-            T PopFront();
-            bool PushBack(T value);
-            bool PushFront(T value);
-            int Size();
+            bool isEmpty() const;
+            T PopBack() const;
+            T PopFront() const;
+            void Print();
+            bool PushBack(T);
+            bool PushFront(T);
+            int Size() const;
     };
+
+    template <typename T>
+    List<T>::List()
+    {
+        head = nullptr;
+        tail = nullptr;
+        _size = 0;
+    }
+    
+    template <typename T>
+    List<T>::~List()
+    {
+        while(!this->isEmpty())
+            this->PopFront();
+    }
+    
+    template <typename T>
+    bool List<T>::isEmpty() const
+    {
+        return ( (head == nullptr) && (tail == nullptr) );
+    }
+    
+    template <typename T>
+    T List<T>::PopBack() const
+    {
+    }
+    
+    template <typename T>
+    T List<T>::PopFront() const
+    {
+    }
+
+    template <typename T>
+    void List<T>::Print()
+    {
+        if(this->isEmpty())
+        {
+            std::cout << "List is empty" << std::endl;
+            return;
+        }
+
+        Node *ptr = head->next;
+
+        while(ptr->next)
+        {
+            std::cout << ptr->data << " ";
+            ptr = ptr->next;
+        }
+    }
+    
+    template <typename T>
+    bool List<T>::PushBack(T value)
+    {
+    }
+    
+    template <typename T>
+    bool List<T>::PushFront(T value)
+    {
+    }
+    
+    template <typename T>
+    int List<T>::Size() const
+    {
+        return _size;
+    }
 }
+
+#endif
