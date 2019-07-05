@@ -1,14 +1,3 @@
-// Second attribute of class list is going to be structure type pointer called head, which is representing pointer to the beginning of the list
-// Third attribute is tail pointer, which is in charge of showing to the end of the list
-// Implement default constructor for initial declaration of new lists
-// Define and implement destructor to prevent memory leakage of our class instances
-// Destructor needs to remove every object in a list
-// Use head pointer to delete every linked list member
-// Implement push_front for adding new nodes on the beginning of the list
-// Implement push_back ( same principle)
-// Implement pop back and pop front which will we based on same logic as push method, but instead of adding elements, they will delete values
-// implement print method logic which will use instance of list object to print stored values
-// Protect every method logic from empty lists
 #ifndef LIST_HPP
 #define LIST_HPP
 
