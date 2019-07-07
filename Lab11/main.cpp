@@ -44,9 +44,9 @@ Pointer<T, size>::~Pointer()
     typename std::list<PtrDetails<T> >::iterator p;
     p = findPtrInfo(addr);
     
-    // TODO: Finalize Pointer destructor
     // decrement ref count
-    p->refCount--;
+    if(p->refCount)
+        p->refCount--;
     
     // Collect garbage when a pointer goes out of scope.
     collect();
