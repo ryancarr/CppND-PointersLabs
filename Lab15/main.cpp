@@ -17,6 +17,12 @@ int main()
 {
     int val = 20;
 
+    {
+        int val = 25;
+
+        std::cout << "Sub Local val: " << val << std::endl;
+    }
+
     std::cout << "Global val   : " <<  ::val << std::endl;
     std::cout << "Namespace val: " <<  test::val << std::endl;
     func();
