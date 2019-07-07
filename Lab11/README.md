@@ -1,0 +1,5 @@
+# New and delete Project LAB
+
+## Description
+
+We talked about how every new needs to be followed by delete. In our project, where we are constructing garbage collector, which works on a same principle as shared_ptr, we can see that concept of reference counting is simple. By using static container of data in our class, where we are remembering every address which every instance pointer pointed in memory and  how much references specific memory holds in a given moment. Here in this context, valid usage of delete operator is crucial. We are using collect method from the class to delete unused memory location. We need to decide by our attributes when to use delete and when delete[]. We can see that this method is only called in destructor. every time when any instance of Class pointer goes out scope collect is called to delete any left over garbage (unused memory).
